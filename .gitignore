@@ -152,4 +152,4 @@ cython_debug/
 #.idea/
 
 # Data
-MNIST_data
+/MNIST_data
