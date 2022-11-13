@@ -6,6 +6,7 @@ from torch.optim import Adam
 from torch.nn import CrossEntropyLoss
 import torch.nn.functional as F
 import torch
+import sklearn.metrics as metrics
 import matplotlib.pyplot as plt
 import numpy as np
 import time
@@ -26,7 +27,7 @@ testloader = DataLoader(testset, batch_size=64, shuffle=True)
 # Load the saved model with the best performance
 
 model = LeNet5()
-model.load_state_dict(torch.load('model.pth'))
+model.load_state_dict(torch.load('LeNet5\model.pth'))
 
 # Check if the GPU is available 
 
@@ -87,11 +88,17 @@ def test_model(model, testloader, device):
     plt.title("Test Loss for each class")
     plt.xlabel("Class")
     plt.ylabel("Loss")
+    plt.autoscale()
     plt.show()
     # Print the total accuracy
     print('Accuracy of the network on the 10000 test images: %d %%' % (100 * correct / total))
     # Print the total loss
     print('Loss of the network on the 10000 test images: %d %%' % (100 - 100 * correct / total))
+    # Print the confusion matrix
+    print('Confusion Matrix:')
+    print(metrics.confusion_matrix(labels.cpu(), predicted.cpu()))
+
+   
 
 # Test the model
 
