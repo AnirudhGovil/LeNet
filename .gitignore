@@ -152,6 +152,7 @@ cython_debug/
 #.idea/
 
 # Data
+/MNIST_data
 /LeNet1/MNIST_data
 /LeNet4/MNIST_data
 /LeNet5/MNIST_data
