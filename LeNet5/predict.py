@@ -9,7 +9,6 @@ import torch
 import sklearn.metrics as metrics
 import matplotlib.pyplot as plt
 import numpy as np
-import time
 from PIL import Image
 
 # Predict the class of a single image using LeNet5
