@@ -152,4 +152,9 @@ cython_debug/
 #.idea/
 
 # Data
+/LeNet1/MNIST_data
+/LeNet4/MNIST_data
 /LeNet5/MNIST_data
+/Boosted \LeNet4/MNIST_data
+/One-Hidden-Layer \FCMNN/MNIST_data
+/Two-Hidden-Layer \FCMNN/MNIST_data
