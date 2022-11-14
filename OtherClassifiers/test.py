@@ -20,7 +20,12 @@ def getAccuracy(y_pred, actual):
     accuracy = np.zeros(10)
     for i in range(10):
         accuracy[i] = np.sum(y_pred[actual == i] == i) / np.sum(actual == i)
-    return accuracy*100
+
+    loss = np.zeros(10)
+    for i in range(10):
+        loss[i] = np.sum(y_pred[y_test == i] != i) / np.sum(y_test == i)
+
+    return accuracy*100, loss*100
 
 
 
@@ -50,11 +55,18 @@ for model in models:
     y_pred = currModel.predict(X_test)
 
     # PLotting accuracy for each class
-    accuracy = getAccuracy(y_pred, y_test)
-    # Print avg accuracy
-    print("Avg Accuracy for " + model + " is: " + str(np.mean(accuracy)))
-    plt.bar(np.arange(10), accuracy)
-    plt.title(model.split(".")[0] + " Accuracy")
-    plt.xlabel("Class")
-    plt.ylabel("Accuracy")
+    accuracy, loss = getAccuracy(y_pred, y_test)
+    # Print avg accuracy and loss
+    print("Model: ", model)
+    print("Avg Accuracy: ", np.mean(accuracy))
+    print("Avg Loss: ", np.mean(loss))
+
+    # Plotting accuracy and loss for each class
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 2, 2)
+    plt.bar(np.arange(10), loss, color='r')
+    plt.title("Loss")
+    plt.subplot(1, 2, 1)
+    plt.bar(np.arange(10), accuracy, color='g')
+    plt.title("Accuracy")
     plt.show()
