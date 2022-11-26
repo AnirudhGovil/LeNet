@@ -7,6 +7,9 @@ We implement all the classifiers mentioned in the paper and compare their perfor
 You can now draw your own number on an interactive webpage and see what the model thinks it is. To run
 
 ```cd LeNet5/frontend```
+
 ```npm run```
+
 ```cd LeNet5```
+
 ```streamlit run interface.py```
