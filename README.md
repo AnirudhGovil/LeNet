@@ -4,6 +4,9 @@ Pytorch implementation of techniques described in Y. Lecun, L. Bottou, Y. Bengio
 
 We implement all the classifiers mentioned in the paper and compare their performance to LeNet-5
 
-For an interactive interface, where you can upload your own image and see how different models classifies it, run the following command 
+You can now draw your own number on an interactive webpage and see what the model thinks it is. To run
 
-```streamlit run LeNet5/interface.py [ARGUMENTS]```
+```cd LeNet5/frontend```
+```npm run```
+```cd LeNet5```
+```streamlit run interface.py```
