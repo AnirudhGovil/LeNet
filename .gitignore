@@ -159,3 +159,5 @@ cython_debug/
 /Boosted \LeNet4/MNIST_data
 /One-Hidden-Layer \FCMNN/MNIST_data
 /Two-Hidden-Layer \FCMNN/MNIST_data
+LeNet5\MNIST_data
+LeNet5\frontend\node_modules

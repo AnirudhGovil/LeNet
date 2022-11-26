@@ -27,7 +27,7 @@ testloader = DataLoader(testset, batch_size=64, shuffle=True)
 # Load the saved model with the best performance
 
 model = LeNet5()
-model.load_state_dict(torch.load('LeNet5\model.pth'))
+model.load_state_dict(torch.load('model.pth'))
 
 # Check if the GPU is available 
 

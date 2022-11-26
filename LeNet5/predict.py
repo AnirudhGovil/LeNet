@@ -41,5 +41,5 @@ def predict(image_path, model, device):
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Load the saved model with the best performance
 model = LeNet5()
-model.load_state_dict(torch.load('LeNet5\model.pth'))
-print(predict("LeNet5\images\\number.png", model, device))
+model.load_state_dict(torch.load('model.pth'))
+print(predict("images\\number.png", model, device))
