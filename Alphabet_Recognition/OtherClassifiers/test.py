@@ -1,19 +1,12 @@
 # import required modules
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 from torchvision.datasets import EMNIST
 from torchvision import transforms
 from torch.utils.data import DataLoader
-from sklearn.decomposition import PCA, KernelPCA
-from torch.optim import Adam
-from torch.nn import CrossEntropyLoss
-import torch.nn.functional as F
 import torch
 import matplotlib.pyplot as plt
 import numpy as np
-import time
-import os
 
 def getAccuracy(y_pred, actual):
     # Get accuracy for each class

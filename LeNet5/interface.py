@@ -64,6 +64,17 @@ if canvas_result.image_data is not None:
       save_drawn_image(uploaded_file)
       with st.spinner('Identifying...'):
           # print the output of predict.py
-          st.write("LeNet thinks this digit is: ",int(subprocess.check_output(["python", "predict.py"])))
+          if(option == 'LeNet 5'):
+            st.write("LeNet thinks this digit is: ",int(subprocess.check_output(["python", "LeNet_5.py"])))
+          elif(option == 'KNN'):
+            st.write("LeNet thinks this digit is: ",int(subprocess.check_output(["python", "KNN.py"])))
+          elif(option == 'Linear Classifier'):
+            st.write("LeNet thinks this digit is: ",int(subprocess.check_output(["python", "Linear_Classifier.py"])))
+          elif(option == 'Polynomial Classifier'):  
+            st.write("LeNet thinks this digit is: ",int(subprocess.check_output(["python", "Polynomial_Classifier.py"])))
+          elif(option == 'RBF Network'):
+            st.write("LeNet thinks this digit is: ",int(subprocess.check_output(["python", "RBF_Network.py"])))
+          elif(option == 'SVM'):
+            st.write("LeNet thinks this digit is: ",int(subprocess.check_output(["python", "SVM.py"])))
 
 
