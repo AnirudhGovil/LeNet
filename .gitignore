@@ -161,3 +161,4 @@ cython_debug/
 /Two-Hidden-Layer \FCMNN/MNIST_data
 LeNet5\MNIST_data
 LeNet5\frontend\node_modules
+Alphabet_Recognition/OtherClassifiers/EMNIST_data
