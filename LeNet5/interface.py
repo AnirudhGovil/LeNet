@@ -55,7 +55,9 @@ canvas_result = st_canvas(
 
 # Do something interesting with the image data and paths
 if canvas_result.image_data is not None:
+  option = st.selectbox( 'Select Classifier', ('LeNet 5', 'LeNet 1', 'LeNet 4', 'Booseted LeNet 4', 'One-Hidden-Layer FCMNN', 'Two-Hidden-Layer FCMNN', 'KNN', 'Linear Classifier', 'Polynomial Classifier', 'RBF Network', 'SVM'))
   if st.button('Predict'):
+    st.write("option is: ",option)
     uploaded_file = canvas_result.image_data
     if uploaded_file is not None:
     # save the image
