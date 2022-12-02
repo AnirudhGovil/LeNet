@@ -1,4 +1,3 @@
-from model import LeNet5
 from torchvision.datasets import MNIST
 from torchvision import transforms
 from torch.utils.data import DataLoader
@@ -33,6 +32,6 @@ def predict(image_path, model, device):
     return output[0]
     
 
-model = torch.load("PolynomialClassifier.pth")
+model = torch.load("KNN.pth")
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(predict("images/number.png", model, device))
