@@ -67,7 +67,7 @@ if canvas_result.image_data is not None:
       with st.spinner('Identifying...'):
           # print the output of predict.py
           if(option == 'LeNet 5'):
-            st.write("LeNet 5 thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "predict.py"]))])
+            st.write("LeNet 5 thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "predict_a.py"]))])
           elif(option == 'LeNet 4'):
             st.write("LeNet 4 thinks this digit is: ",int(subprocess.check_output(["python", "LeNet_4.py"])))
           elif(option == 'Boosted LeNet 4'):
@@ -79,7 +79,7 @@ if canvas_result.image_data is not None:
           elif(option == 'One-Hidden-Layer FCMNN'):
             st.write("One-Hidden-Layer FCMNN thinks this digit is: ",int(subprocess.check_output(["python", "One_Hidden_Layer_FCMNN.py"])))
           elif(option == 'KNN'):
-            st.write("KNN thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "KNN.py"]))])
+            st.write("KNN thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "KNNa.py"]))])
           elif(option == 'Linear Classifier'):
             st.write("Linear Classifier thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Linear_Classifier.py"]))])
           elif(option == 'Polynomial Classifier'):  
@@ -87,6 +87,6 @@ if canvas_result.image_data is not None:
           elif(option == 'RBF Network'):
             st.write("RBF Network thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "RBF_Network.py"]))])
           elif(option == 'SVM'):
-            st.write("SVM thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "SVM.py"]))])
+            st.write("SVM thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "SVMa.py"]))])
 
 
