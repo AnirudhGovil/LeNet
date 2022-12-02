@@ -66,7 +66,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Load the saved model with the best performance
 model = TwoFCMNN()
 if(device.type == 'cpu'):
-    model.load_state_dict(torch.load('Two_Hidden_Layer_FCMNN.pth', map_location='cpu'))
+    model.load_state_dict(torch.load('Two_Hidden_Layer_FCMNNa.pth', map_location='cpu'))
 else:
-    model.load_state_dict(torch.load('Two_Hidden_Layer_FCMNN.pth'))
+    model.load_state_dict(torch.load('Two_Hidden_Layer_FCMNNa.pth'))
 print(predict("images/number.png", model, device))

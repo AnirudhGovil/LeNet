@@ -67,7 +67,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Load the saved model with the best performance
 model = LeNet4()
 if(device.type == 'cpu'):
-    model.load_state_dict(torch.load('LeNet_4.pth', map_location='cpu'))
+    model.load_state_dict(torch.load('LeNet_4a.pth', map_location='cpu'))
 else:
-    model.load_state_dict(torch.load('LeNet_4.pth'))
+    model.load_state_dict(torch.load('LeNet_4a.pth'))
 print(predict("images/number.png", model, device))
