@@ -57,7 +57,7 @@ canvas_result = st_canvas(
 
 # Do something interesting with the image data and paths
 if canvas_result.image_data is not None:
-  option = st.selectbox( 'Select Classifier', ('LeNet 5', 'LeNet 1', 'LeNet 4', 'Booseted LeNet 4', 'One-Hidden-Layer FCMNN', 'Two-Hidden-Layer FCMNN', 'KNN', 'Linear Classifier', 'Polynomial Classifier', 'RBF Network', 'SVM'))
+  option = st.selectbox( 'Select Classifier', ('LeNet 5', 'LeNet 1', 'LeNet 4', 'Boosted LeNet 4', 'One-Hidden-Layer FCMNN', 'Two-Hidden-Layer FCMNN', 'KNN', 'Linear Classifier', 'Polynomial Classifier', 'RBF Network', 'SVM'))
   if st.button('Predict'):
     st.write("option is: ",option)
     uploaded_file = canvas_result.image_data
@@ -67,16 +67,26 @@ if canvas_result.image_data is not None:
       with st.spinner('Identifying...'):
           # print the output of predict.py
           if(option == 'LeNet 5'):
-            st.write("LeNet thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "predict.py"]))])
+            st.write("LeNet 5 thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "predict.py"]))])
+          elif(option == 'LeNet 4'):
+            st.write("LeNet 4 thinks this digit is: ",int(subprocess.check_output(["python", "LeNet_4.py"])))
+          elif(option == 'Boosted LeNet 4'):
+            st.write("Boosted LeNet 4 thinks this digit is: ",int(subprocess.check_output(["python", "Boosted_LeNet_4.py"])))
+          elif(option == 'LeNet 1'):
+            st.write("LeNet 1 thinks this digit is: ",int(subprocess.check_output(["python", "LeNet_1.py"])))
+          elif(option == 'Two-Hidden-Layer FCMNN'):
+            st.write("Two-Hidden-Layer FCMNN thinks this digit is: ",int(subprocess.check_output(["python", "Two_Hidden_Layer_FCMNN.py"])))
+          elif(option == 'One-Hidden-Layer FCMNN'):
+            st.write("One-Hidden-Layer FCMNN thinks this digit is: ",int(subprocess.check_output(["python", "One_Hidden_Layer_FCMNN.py"])))
           elif(option == 'KNN'):
-            st.write("LeNet thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "KNN.py"]))])
+            st.write("KNN thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "KNN.py"]))])
           elif(option == 'Linear Classifier'):
-            st.write("LeNet thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Linear_Classifier.py"]))])
+            st.write("Linear Classifier thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Linear_Classifier.py"]))])
           elif(option == 'Polynomial Classifier'):  
-            st.write("LeNet thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Polynomial_Classifier.py"]))])
+            st.write("Polynomial Classifier thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Polynomial_Classifier.py"]))])
           elif(option == 'RBF Network'):
-            st.write("LeNet thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "RBF_Network.py"]))])
+            st.write("RBF Network thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "RBF_Network.py"]))])
           elif(option == 'SVM'):
-            st.write("LeNet thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "SVM.py"]))])
+            st.write("SVM thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "SVM.py"]))])
 
 
