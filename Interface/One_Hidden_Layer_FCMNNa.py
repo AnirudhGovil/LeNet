@@ -37,6 +37,10 @@ def predict(image_path, model, device):
     image = Image.open(image_path)
     # Convert the image to grayscale
     image = image.convert('L')
+     # Flip the image
+    image = image.transpose(Image.FLIP_LEFT_RIGHT)
+    # Rotate the image 90 degrees anticlockwise
+    image = image.rotate(90)
     # Resize the image
     image = image.resize((28, 28))
     # Convert the image to a tensor

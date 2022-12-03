@@ -41,6 +41,10 @@ def predict(image_path, model, device):
     image = Image.open(image_path)
     # Convert the image to grayscale
     image = image.convert('L')
+     # Flip the image
+    image = image.transpose(Image.FLIP_LEFT_RIGHT)
+    # Rotate the image 90 degrees anticlockwise
+    image = image.rotate(90)
     # Resize the image
     image = image.resize((28, 28))
     # Convert the image to a tensor
@@ -69,9 +73,9 @@ models = []
 for i in range(3):
     model = LeNet4()
     if(device.type == 'cpu'):
-        model.load_state_dict(torch.load('Boosted_LeNet4_models/model' + str(i) + '.pth', map_location='cpu'))
+        model.load_state_dict(torch.load('Boosted_LeNet4_modelsa/model' + str(i) + '.pth', map_location='cpu'))
     else:
-        model.load_state_dict(torch.load('Boosted_LeNet4_models/model' + str(i) + '.pth'))
+        model.load_state_dict(torch.load('Boosted_LeNet4_modelsa/model' + str(i) + '.pth'))
     models.append(model)
 
 print(predict("images/number.png", models, device))

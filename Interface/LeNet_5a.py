@@ -10,10 +10,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
-class LeNet5(torch.nn.Module):
+class LeNet5a(torch.nn.Module):
 
     def __init__(self):
-        super(LeNet5, self).__init__()
+        super(LeNet5a, self).__init__()
         self.conv1 = torch.nn.Conv2d(1, 6, 5, padding=2)
         self.conv2 = torch.nn.Conv2d(6, 16, 5)
         self.fc1 = torch.nn.Linear(16 * 5 * 5, 120)
@@ -45,6 +45,10 @@ def predict(image_path, model, device):
     image = Image.open(image_path)
     # Convert the image to grayscale
     image = image.convert('L')
+    # Flip the image
+    image = image.transpose(Image.FLIP_LEFT_RIGHT)
+    # Rotate the image 90 degrees anticlockwise
+    image = image.rotate(90)
     # Resize the image
     image = image.resize((28, 28))
     # Convert the image to a tensor
@@ -65,9 +69,15 @@ def predict(image_path, model, device):
 # Print the predicted class of the image
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Load the saved model with the best performance
-model = LeNet5()
-if(device.type == 'cpu'):
-    model.load_state_dict(torch.load('LeNet_5a.pth', map_location='cpu'))
-else:
-    model.load_state_dict(torch.load('LeNet_5a.pth'))
+model = LeNet5a()
+model.load_state_dict(torch.load('LeNet_5a.pth'))
+
+# Check if the GPU is available 
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+# Move the model to the GPU if available
+
+model.to(device)
+
 print(predict("images/number.png", model, device))

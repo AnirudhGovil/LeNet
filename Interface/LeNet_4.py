@@ -42,6 +42,7 @@ def predict(image_path, model, device):
     image = Image.open(image_path)
     # Convert the image to grayscale
     image = image.convert('L')
+
     # Resize the image
     image = image.resize((28, 28))
     # Convert the image to a tensor

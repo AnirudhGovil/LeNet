@@ -39,6 +39,10 @@ def predict(image_path, model, device):
     image = Image.open(image_path)
     # Convert the image to grayscale
     image = image.convert('L')
+     # Flip the image
+    image = image.transpose(Image.FLIP_LEFT_RIGHT)
+    # Rotate the image 90 degrees anticlockwise
+    image = image.rotate(90)
     # Resize the image
     image = image.resize((28, 28))
     # Convert the image to a tensor
@@ -61,7 +65,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Load the saved model with the best performance
 model = LeNet1()
 if(device.type == 'cpu'):
-    model.load_state_dict(torch.load('LeNet_1.pth', map_location='cpu'))
+    model.load_state_dict(torch.load('LeNet_1a.pth', map_location='cpu'))
 else:
-    model.load_state_dict(torch.load('LeNet_1.pth'))
+    model.load_state_dict(torch.load('LeNet_1a.pth'))
 print(predict("images/number.png", model, device))

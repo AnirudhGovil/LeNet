@@ -21,6 +21,10 @@ def predict(image_path, model, device):
     image = image.convert('L')
     # Resize the image
     image = image.resize((28, 28))
+     # Flip the image
+    image = image.transpose(Image.FLIP_LEFT_RIGHT)
+    # Rotate the image 90 degrees anticlockwise
+    image = image.rotate(90)
     # Convert the image to numpy array
     image = np.array(image)
     # Convert to 1D array

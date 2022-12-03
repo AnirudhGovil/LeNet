@@ -69,23 +69,23 @@ if canvas_result.image_data is not None:
           if(option == 'LeNet 5'):
             st.write("LeNet 5 thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "predict_a.py"]))])
           elif(option == 'LeNet 4'):
-            st.write("LeNet 4 thinks this digit is: ",int(subprocess.check_output(["python", "LeNet_4.py"])))
+            st.write("LeNet 4 thinks this digit is: ",int(subprocess.check_output(["python", "LeNet_4a.py"])))
           elif(option == 'Boosted LeNet 4'):
-            st.write("Boosted LeNet 4 thinks this digit is: ",int(subprocess.check_output(["python", "Boosted_LeNet_4.py"])))
+            st.write("Boosted LeNet 4 thinks this digit is: ",int(subprocess.check_output(["python", "Boosted_LeNet_4a.py"])))
           elif(option == 'LeNet 1'):
-            st.write("LeNet 1 thinks this digit is: ",int(subprocess.check_output(["python", "LeNet_1.py"])))
+            st.write("LeNet 1 thinks this digit is: ",int(subprocess.check_output(["python", "LeNet_1a.py"])))
           elif(option == 'Two-Hidden-Layer FCMNN'):
-            st.write("Two-Hidden-Layer FCMNN thinks this digit is: ",int(subprocess.check_output(["python", "Two_Hidden_Layer_FCMNN.py"])))
+            st.write("Two-Hidden-Layer FCMNN thinks this digit is: ",int(subprocess.check_output(["python", "Two_Hidden_Layer_FCMNNa.py"])))
           elif(option == 'One-Hidden-Layer FCMNN'):
-            st.write("One-Hidden-Layer FCMNN thinks this digit is: ",int(subprocess.check_output(["python", "One_Hidden_Layer_FCMNN.py"])))
+            st.write("One-Hidden-Layer FCMNN thinks this digit is: ",int(subprocess.check_output(["python", "One_Hidden_Layer_FCMNNa.py"])))
           elif(option == 'KNN'):
             st.write("KNN thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "KNNa.py"]))])
           elif(option == 'Linear Classifier'):
-            st.write("Linear Classifier thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Linear_Classifier.py"]))])
+            st.write("Linear Classifier thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Linear_Classifiera.py"]))])
           elif(option == 'Polynomial Classifier'):  
-            st.write("Polynomial Classifier thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Polynomial_Classifier.py"]))])
+            st.write("Polynomial Classifier thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Polynomial_Classifiera.py"]))])
           elif(option == 'RBF Network'):
-            st.write("RBF Network thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "RBF_Network.py"]))])
+            st.write("RBF Network thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "RBF_Networka.py"]))])
           elif(option == 'SVM'):
             st.write("SVM thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "SVMa.py"]))])
 

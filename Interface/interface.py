@@ -14,7 +14,7 @@ def save_drawn_image(uploadedfile):
   im = Image.fromarray(uploaded_file)
   im.save(os.path.join("images","number.png"))
 
-alpa_dict = {0:"N/A", 1:"A", 2:"B", 3:"C", 4:"D", 5:"E", 6:"F", 7:"G", 8:"H", 9:"I", 10:"J", 11:"K", 12:"L", 13:"M", 14:"N", 15:"O", 16:"P", 17:"Q", 18:"R", 19:"S", 20:"T", 21:"U", 22:"V", 23:"W", 24:"X", 25:"Y", 26:"Z"}
+alpha_dict = {0:"N/A", 1:"A", 2:"B", 3:"C", 4:"D", 5:"E", 6:"F", 7:"G", 8:"H", 9:"I", 10:"J", 11:"K", 12:"L", 13:"M", 14:"N", 15:"O", 16:"P", 17:"Q", 18:"R", 19:"S", 20:"T", 21:"U", 22:"V", 23:"W", 24:"X", 25:"Y", 26:"Z"}
 
 st.title("LeNet-5")
 
@@ -102,26 +102,26 @@ if canvas_result.image_data is not None:
             # print the output of predict.py
              # print the output of predict.py
           if(option == 'LeNet 5'):
-            st.write("LeNet 5 thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "LeNet_5a.py"]))])
+            st.write("LeNet 5 thinks this alphabet is: ",alpha_dict[int(subprocess.check_output(["python", "LeNet_5a.py"]))])
           elif(option == 'LeNet 4'):
-            st.write("LeNet 4 thinks this digit is: ",int(subprocess.check_output(["python", "LeNet_4a.py"])))
+            st.write("LeNet 4 thinks this digit is: ",alpha_dict[int(subprocess.check_output(["python", "LeNet_4a.py"]))])
           elif(option == 'Boosted LeNet 4'):
-            st.write("Boosted LeNet 4 thinks this digit is: ",int(subprocess.check_output(["python", "Boosted_LeNet_4a.py"])))
+            st.write("Boosted LeNet 4 thinks this digit is: ",alpha_dict[int(subprocess.check_output(["python", "Boosted_LeNet_4a.py"]))])
           elif(option == 'LeNet 1'):
-            st.write("LeNet 1 thinks this digit is: ",int(subprocess.check_output(["python", "LeNet_1a.py"])))
+            st.write("LeNet 1 thinks this digit is: ",alpha_dict[int(subprocess.check_output(["python", "LeNet_1a.py"]))])
           elif(option == 'Two-Hidden-Layer FCMNN'):
-            st.write("Two-Hidden-Layer FCMNN thinks this digit is: ",int(subprocess.check_output(["python", "Two_Hidden_Layer_FCMNNa.py"])))
+            st.write("Two-Hidden-Layer FCMNN thinks this digit is: ",alpha_dict[int(subprocess.check_output(["python", "Two_Hidden_Layer_FCMNNa.py"]))])
           elif(option == 'One-Hidden-Layer FCMNN'):
-            st.write("One-Hidden-Layer FCMNN thinks this digit is: ",int(subprocess.check_output(["python", "One_Hidden_Layer_FCMNNa.py"])))
+            st.write("One-Hidden-Layer FCMNN thinks this digit is: ",alpha_dict[int(subprocess.check_output(["python", "One_Hidden_Layer_FCMNNa.py"]))])
           elif(option == 'KNN'):
-            st.write("KNN thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "KNNa.py"]))])
+            st.write("KNN thinks this alphabet is: ",alpha_dict[int(subprocess.check_output(["python", "KNNa.py"]))])
           elif(option == 'Linear Classifier'):
-            st.write("Linear Classifier thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Linear_Classifiera.py"]))])
+            st.write("Linear Classifier thinks this alphabet is: ",alpha_dict[int(subprocess.check_output(["python", "Linear_Classifiera.py"]))])
           elif(option == 'Polynomial Classifier'):  
-            st.write("Polynomial Classifier thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "Polynomial_Classifiera.py"]))])
+            st.write("Polynomial Classifier thinks this alphabet is: ",alpha_dict[int(subprocess.check_output(["python", "Polynomial_Classifiera.py"]))])
           elif(option == 'RBF Network'):
-            st.write("RBF Network thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "RBF_Networka.py"]))])
+            st.write("RBF Network thinks this alphabet is: ",alpha_dict[int(subprocess.check_output(["python", "RBF_Networka.py"]))])
           elif(option == 'SVM'):
-            st.write("SVM thinks this alphabet is: ",alpa_dict[int(subprocess.check_output(["python", "SVMa.py"]))])
+            st.write("SVM thinks this alphabet is: ",alpha_dict[int(subprocess.check_output(["python", "SVMa.py"]))])
 
 
